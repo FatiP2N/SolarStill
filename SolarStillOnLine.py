@@ -33,6 +33,7 @@ from openpyxl.utils.dataframe import dataframe_to_rows
 from openpyxl import load_workbook
 import seaborn as sns
 import gspread
+from google.colab import auth
 from google.oauth2.service_account import Credentials
 from google.auth import default
 from google.auth import exceptions
