@@ -541,7 +541,10 @@ class SolarStill:
 
         #Enthalpy of condensation according to Dhir, V. K., and J. H. Lienhard, J. Heat Transfer, 93, 97,1971.
 
-        if Tg0<=(self.Tr(Ta0 - self.kelv,self.p,self.w)+self.kelv):
+        # relative humidity of the ambient air from its specific humidity (kg/kg), then dew point
+        rh=self.w*self.p*1e6/((0.622+self.w)*self.PSat(Ta0))
+        rh=min(max(rh,0.01),1.0)
+        if Tg0<=(self.Tr(Ta0 - self.kelv,self.p,rh)+self.kelv):
 
             Tsat=self.TSat_P(self.p)
             liq=IAPWS97(T=((Tsat+Tg0)/2 ),P=self.p,x=0)
