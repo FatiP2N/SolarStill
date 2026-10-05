@@ -4,7 +4,7 @@ An open-source Python tool that predicts the performance and the water cost of a
 
 You describe the still in one Excel file (geometry, materials, local weather). The tool returns the temperatures of the cover, water and basin, the daily yield, the thermal efficiency and the cost per kg of distilled water, and it draws the design.
 
-![Stepped solar still prototype](Readme/stepped.jpg)
+                   ![Stepped solar still prototype](Readme/stepped.jpg)
 
 ## What it does
 
@@ -16,17 +16,17 @@ You describe the still in one Excel file (geometry, materials, local weather). T
 - Compares the simulation with your measurements when they are available.
 - Feeds a shared dataset used to train a machine-learning model (Random Forest) that predicts yield, efficiency and cost.
 
-![Example of output](Readme/Output.JPG)
+               ![Example of output](Readme/Output.JPG)
 
 ## Demo
 
 Filling the Excel file and running the simulation:
 
-![Demonstration of the tool](demo.gif)
+                   ![Demonstration of the tool](demo.gif)
 
 The stepped solar still prototype in operation:
 
-![Stepped solar still prototype in operation](prototype.gif)
+             ![Stepped solar still prototype in operation](prototype.gif)
 
 ## Quick start
 
