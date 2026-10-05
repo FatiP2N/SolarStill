@@ -1,0 +1,8 @@
+numpy
+scipy
+pandas
+openpyxl
+matplotlib
+seaborn
+iapws
+tqdm
