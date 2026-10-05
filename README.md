@@ -20,8 +20,13 @@ You describe the still in one Excel file (geometry, materials, local weather). T
 
 ## Demo
 
-- [Demonstration of the tool (video)](Readme/SolarStill_Demo.mp4): filling the Excel file and running the simulation.
-- [Stepped solar still prototype in operation (video)](Readme/stepped_SS.mp4)
+Filling the Excel file and running the simulation:
+
+![Demonstration of the tool](demo.gif)
+
+The stepped solar still prototype in operation:
+
+![Stepped solar still prototype in operation](prototype.gif)
 
 ## Quick start
 
@@ -31,16 +36,16 @@ You describe the still in one Excel file (geometry, materials, local weather). T
 git clone https://github.com/FatiP2N/SolarStill.git
 cd SolarStill
 pip install -r requirements.txt
-python solarstill.py
+python solarstill_V2026.py
 ```
 
 ### In Google Colab or Jupyter
 
-Upload `solarstill.py` and one of the Excel files, then run:
+Upload `solarstill_V2026.py` and one of the Excel files, then run:
 
 ```python
 !pip install iapws
-from solarstill import SolarStill, Error_deviation
+from solarstill_V2026 import SolarStill, Error_deviation
 
 ss = SolarStill("conventional.xlsx", 24)   # Excel file, number of time steps per measurement interval
 ss.plot_device()          # technical sheet, price and drawing of the still
@@ -61,10 +66,7 @@ Each example file (`conventional.xlsx`, `cssb.xlsx`, `stepped.xlsx`) has five sh
 | `Corr` | Choice of the evaporation model (Dunkle, Hollands, Chen, Zheng) |
 | `Exp_Data` | Measured temperatures and distilled water, if available |
 
-Two optional sheets, each with two columns (`Parameter`, `Value`), override the defaults:
-
-- `Cost`: `interest`, `sunny_days`, `labor_step`, `labor_length`, `support_low`, `support_high`.
-- `Options`: `feed` (feed flow in kg/h), `kv`, `ks` (head-loss coefficients) and `solver` (`rk4` or `stiff`).
+An optional sheet named `Cost`, with two columns (`Parameter`, `Value`), overrides the cost assumptions: `interest`, `sunny_days`, `labor_step`, `labor_length`, `support_low`, `support_high`.
 
 ## Useful options
 
